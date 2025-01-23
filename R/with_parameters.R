@@ -195,7 +195,7 @@ build_and_run_test <- function(..., .test_name, desc, code, env, .interpret_glue
         paste("glue_data() on desc= produced output of length", desc_n)
       )
     } else {
-      completed_desc <- glue_data(args, completed_desc)
+      completed_desc <- if (.interpret_glue) glue_data(args, completed_desc) else completed_desc
     }
   }
 
